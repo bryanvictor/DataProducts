@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Household Income and the Poverty Threshold</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Household Income and the Poverty Threshold">
+  <meta name="author" content="Bryan Victor">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Household Income and the Poverty Threshold</h1>
+    <h2>Data Products Assignment</h2>
+    <p>Bryan Victor<br/>July 23, 2016</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is the poverty threshold?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the United States, the federal government calculates an annual &quot;poverty threshold&quot; which is designed to estimate the annual household income needed to provide for a family&#39;s basic needs.  Because more family members require more money to meet those needs, the poverty threshold is higher for families with more members. Here are the levels for 2016 based on household size:</p>
+
+<p><img src="levels.png" alt="width"></p>
+
+<!-- Center image on slide -->
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type="text/javascript">
+$(function() {     
+  $("p:has(img)").addClass('centered'); 
+});
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Household income as a percentage of the poverty threshold</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The current app allows the user to determine their household income as a percentage of the poverty line.  But why would anyone want this particular statistic?  The reason is that many of the U.S. government&#39;s assistance programs determine eligibity based on a household&#39;s percentage of the poverty threshold. A fast calculation based on up to date figures, annual household income and household size is therefore important for quickly determining eligibility.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Core function</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The core underlying function that drives this app is presented below:</p>
+
+<pre><code class="r">percent_poverty &lt;- function(household_size, household_income) {
+  if (household_size==&quot;1&quot;) { y&lt;-11880}
+  if (household_size==&quot;2&quot;) { y&lt;-16020}
+  if (household_size==&quot;3&quot;) { y&lt;-20160}
+  if (household_size==&quot;4&quot;) { y&lt;-24300}
+  if (household_size==&quot;5&quot;) { y&lt;-28440}
+  if (household_size==&quot;6&quot;) { y&lt;-32580}
+  if (household_size==&quot;7&quot;) { y&lt;-36730}
+  if (household_size==&quot;8&quot;) { y&lt;-40890}
+  if (household_size==&quot;9&quot;) { y&lt;-45050}
+  if (household_size==&quot;10&quot;) { y&lt;-49210}
+
+  prediction &lt;- round(household_income / y * 100, digits = 0)
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Final output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The user is provided with a clear percentage value after providing household size and household income:</p>
+
+<p><img src="app.png" alt="width"></p>
+
+<!-- Center image on slide -->
+
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type="text/javascript">
+$(function() {     
+  $("p:has(img)").addClass('centered'); 
+});
+</script>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is the poverty threshold?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Household income as a percentage of the poverty threshold'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Core function'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Final output'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
