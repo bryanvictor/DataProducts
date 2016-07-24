@@ -6,4 +6,4 @@ This app allows the user to calculate their household income as a percentage of 
 
 The application for this project can be found here: https://bryanvictor.shinyapps.io/DataProducts/
 
-The slides for this project can be found here: 
+The slides for this project can be found here:  https://bryanvictor.github.io/SlidifySlides/index.html#1
